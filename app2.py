@@ -3,6 +3,9 @@ from flask_login import LoginManager, login_user, logout_user, login_required, c
 from models import get_user_by_username, get_user_by_id
 from flask import abort
 import Grade7PageConfig 
+from LearnMappings import Grade3Mapper as mapper
+import traceback
+
 app = Flask(__name__)
 app.secret_key = 'your-secret-key'
 
@@ -115,6 +118,139 @@ def secondary1():
         except:
             return "Template not found: Grade-7/Grade-7.html", 500
 
+
+@app.route('/Learn/Primary-Grade-3/<topic>/<subtopic>')
+def primary3_handler1(topic, subtopic):
+    try:
+        fn, data = mapper.getMapping(subtopic, topic=topic)
+
+        # Remove leading '/' and GroupTitle prefix if present
+        fn_clean = fn.strip("/")
+        if fn_clean.startswith(data["GroupTitle"] + "/"):
+            fn_clean = fn_clean[len(data["GroupTitle"]) + 1:]  # +1 for slash
+
+        filename = "Notes/Primary3/{}/{}".format(data["GroupTitle"], fn_clean)
+
+        print("Rendering:", filename)  # Debug print
+
+        return render_template(filename, **data)
+    except KeyError:
+        abort(404)
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        abort(500)
+
+
+@app.route('/Learn/Primary-Grade-3/<subtopic>')
+def primary3_handler2(subtopic):
+    try:
+        fn, data = mapper.getMapping(subtopic)
+        filename = "Notes/Primary3" + fn
+        return render_template(filename, **data)
+    except KeyError:
+        abort(404)
+
+@app.route('/Learn/Primary-Grade-4/<topic>/<subtopic>')
+def primary4_handler1(topic, subtopic):
+    try:
+        fn, data = mapper.getMapping(subtopic, topic=topic)
+
+        # Clean the filename
+        fn_clean = fn.strip("/")
+        if fn_clean.startswith("Learn/"):
+            fn_clean = fn_clean[len("Learn/"):]
+        fn_clean=fn_clean.replace("Primary-Grade-4","Primary4")
+        filename = "Notes/{}".format(fn_clean)
+
+        print("Rendering:", filename)  # Debug print
+
+        return render_template(filename, **data)
+    except KeyError:
+        abort(404)
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        abort(500)
+
+
+@app.route('/Learn/Primary-Grade-4/<subtopic>')
+def primary4_handler2(subtopic):
+    try:
+        fn, data = mapper.getMapping(subtopic)
+        filename = "Notes/Primary4" + fn
+        return render_template(filename, **data)
+    except KeyError:
+        abort(404)
+
+@app.route('/Learn/Primary-Grade-5/<topic>/<subtopic>')
+def primary5_handler1(topic, subtopic):
+    try:
+        fn, data = mapper.getMapping(subtopic, topic=topic)
+
+        # Clean the filename
+        fn_clean = fn.strip("/")
+        if fn_clean.startswith("Learn/"):
+            fn_clean = fn_clean[len("Learn/"):]
+        fn_clean=fn_clean.replace("Primary-Grade-5","Primary5")
+        filename = "Notes/{}".format(fn_clean)
+
+        print("Rendering:", filename)  # Debug print
+
+        return render_template(filename, **data)
+    except KeyError:
+        abort(404)
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        abort(500)
+
+
+
+@app.route('/Learn/Primary-Grade-5/<subtopic>')
+def primary5_handler2(subtopic):
+    try:
+        fn, data = mapper.getMapping(subtopic)
+        filename = "Notes/Primary5" + fn
+        return render_template(filename, **data)
+    except KeyError:
+        abort(404)
+
+@app.route('/Learn/Primary-Grade-6/<topic>/<subtopic>')
+def primary6_handler1(topic, subtopic):
+    try:
+        fn, data = mapper.getMapping(subtopic, topic=topic)
+
+        # Clean the filename
+        fn_clean = fn.strip("/")
+        if fn_clean.startswith("Learn/"):
+            fn_clean = fn_clean[len("Learn/"):]
+        fn_clean=fn_clean.replace("Primary-Grade-6","Primary6")
+        filename = "Notes/{}.html".format(fn_clean)
+
+        print("Rendering:", filename)  # Debug print
+
+        return render_template(filename, **data)
+    except KeyError:
+        abort(404)
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        abort(500)
+
+@app.route('/Learn/Primary-Grade-6/<subtopic>')
+def primary6_handler2(subtopic):
+    try:
+        fn, data = mapper.getMapping(subtopic)
+        filename = "Notes/Primary6" + fn
+        return render_template(filename, **data)
+    except KeyError:
+        abort(404)
+
+
+@app.route('/learn')
+def learn_page():
+    return render_template('LearnPage.html', section='content')
 
 if __name__ == '__main__':
     app.run(debug=True)
