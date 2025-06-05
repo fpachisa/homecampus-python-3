@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var _this_script = $("script[src='/js/unified_grade_index.js']");
+	var _this_script = $("script[src='/static/js/unified_grade_index.js']");
 	var grade = _this_script.attr("data-grade");
 	var intent = _this_script.attr("data-intent");
 
@@ -7,7 +7,7 @@ $(document).ready(function(){
 	var learnIntent = (intent == "lrn")?true:false;
 	var practiceIntent = (intent == "prc")?true:false;
 	
-	var pathToMap = "/js/Primary" + grade + "_urlmap.json";
+	var pathToMap = "/static/js/Primary" + grade + "_urlmap.json";
 	
 	//ignore all the clicks that are made before the urlmap is loaded (may arise due to slower network connections or something like that)
 	$(".chapter__topic").on("click.pending-urlmap", function(evt){
