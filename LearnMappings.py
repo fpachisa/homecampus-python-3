@@ -42,7 +42,7 @@ LinkMap_<grade> = {
 
 # LearnMappings for PRIMARY - 3
 #------------------------------
-Primary3 = {
+map = {'Primary3': {
         
         # Chapter - 1 WHOLE NUMBER
         "Multiplication-Tables-of-6-7-8-9": [
@@ -90,11 +90,281 @@ Primary3 = {
                 "2-Step Word Problems Involving the Four Operations (&plus;, &minus;, &times; and &divide;)", "P3WN", 11
             ],
         #----- END of CH - 1 -----#
-        
-        
+         "What-Is-a-Fraction": [
+        "/Fractions/What-Is-a-Fraction.html",
+        "",
+        "",
+        "",
+        "What Is A Fraction",
+        "P",
+        1
+    ],
+    "Money-Word-Problems": [
+        "/Money/Money_Word_Problems",
+        "",
+        "",
+        "",
+        "Money Word Problems",
+        "",
+        1
+    ],
+    "Addition-of-Money": [
+        "/Money/Addition_of_Money.html",
+        "",
+        "",
+        "",
+        "Addition Of Money",
+        "",
+        1
+    ],
+    "Subtraction-of-Money": [
+        "/Primary-Grade-3/Subtraction_Of_Money",
+        "",
+        "",
+        "",
+        "Subtraction Of Money",
+        "",
+        1
+    ],
+    "Telling-Time": [
+        "/Time/Telling_Time",
+        "",
+        "",
+        "",
+        "Telling Time",
+        "P3T",
+        1
+    ],
+    "Time-Conversion-Hours-Minutes": [
+        "/Time/Hours_and_Minutes",
+        "",
+        "",
+        "",
+        "Time Conversion Hours Minutes",
+        "",
+        1
+    ],
+    "Time-Addition": [
+        "/Time/Time_Addition",
+        "",
+        "",
+        "",
+        "Time Addition",
+        "P3T",
+        1
+    ],
+    "Time-Subtraction": [
+        "/Time/Time_Subtraction",
+        "",
+        "",
+        "",
+        "Time Subtraction",
+        "P3T",
+        1
+    ],
+    "Time-Finding-Duration-Start-Finish": [
+        "/Time/Time_Duration",
+        "",
+        "",
+        "",
+        "Time Finding Duration Start Finish",
+        "",
+        1
+    ],
+    "Time-Problem-Sums": [
+        "/Time/Time_Word_Problems",
+        "",
+        "",
+        "",
+        "Time Problem Sums",
+        "P3T",
+        1
+    ],
+    "Metres-Centimetres": [
+        "/LengthMassVolume/Metres_Centimetres",
+        "",
+        "",
+        "",
+        "Metres Centimetres",
+        "P3LM",
+        1
+    ],
+    "KiloMetres-Metres": [
+        "/LengthMassVolume/KiloMetres_Metres",
+        "",
+        "",
+        "",
+        "Kilometres Metres",
+        "P3LM",
+        1
+    ],
+    "Kilograms-Grams": [
+        "/LengthMassVolume/Kilograms_Grams",
+        "",
+        "",
+        "",
+        "Kilograms Grams",
+        "P3LM",
+        1
+    ],
+    "Litres-Millilitres": [
+        "/LengthMassVolume/Litres_Millilitres",
+        "",
+        "",
+        "",
+        "Litres Millilitres",
+        "P3LM",
+        1
+    ],
+    "Length-Mass-Volume-1-Step-Story-Sums": [
+        "/LengthMassVolume/1_Step_Story_Sums",
+        "",
+        "",
+        "",
+        "Length Mass Volume 1 Step Story Sums",
+        "",
+        1
+    ],
+    "Length-Mass-Volume-2-Step-Story-Sums": [
+        "/LengthMassVolume/2_Step_Story_Sums",
+        "",
+        "",
+        "",
+        "Length Mass Volume 2 Step Story Sums",
+        "",
+        1
+    ],
+    "Equivalent-Fractions": [
+        "/Fractions/Equivalent_Fractions",
+        "",
+        "",
+        "",
+        "Equivalent Fractions",
+        "P3F",
+        1
+    ],
+    "Simplifying-Fractions": [
+        "/Fractions/Simplifying_Fractions",
+        "",
+        "",
+        "",
+        "Simplifying Fractions",
+        "P3F",
+        1
+    ],
+    "Comparing-and-Ordering-Fractions": [
+        "/Fractions/Comparing_Ordering_Fractions",
+        "",
+        "",
+        "",
+        "Comparing And Ordering Fractions",
+        "",
+        1
+    ],
+    "Adding-Fractions": [
+        "/Fractions/Addition_Fractions",
+        "",
+        "",
+        "",
+        "Adding Fractions",
+        "P3F",
+        1
+    ],
+    "Subtracting-Fractions": [
+        "/Fractions/Subtracting_Fractions",
+        "",
+        "",
+        "",
+        "Subtracting Fractions",
+        "P3F",
+        1
+    ],
+    "Area-in-Square-Units": [
+        "/AreaPerimeter/Area_Square_Units",
+        "",
+        "",
+        "",
+        "Area In Square Units",
+        "",
+        1
+    ],
+    "Area-in-Square-Centimetres-Square-Metres": [
+        "/AreaPerimeter/Area_Square_CM_Square_M",
+        "",
+        "",
+        "",
+        "Area In Square Centimetres Square Metres",
+        "",
+        1
+    ],
+    "Area-of-Squares-and-Rectangles": [
+        "/AreaPerimeter/Area_Square_Rectangle",
+        "",
+        "",
+        "",
+        "Area Of Squares And Rectangles",
+        "",
+        1
+    ],
+    "Perimeter-of-Squares-and-Rectangles": [
+        "/AreaPerimeter/Perimeter_Square_Rectangle",
+        "",
+        "",
+        "",
+        "Perimeter Of Squares And Rectangles",
+        "",
+        1
+    ],
+    "Area-Perimeter-Problem-Sums": [
+        "/AreaPerimeter/Area_Perimeter_Word_Problems",
+        "",
+        "",
+        "",
+        "Area Perimeter Problem Sums",
+        "",
+        1
+    ],
+    "Identifying-Angles-in-Figures": [
+        "/Angles/Identifying_Angles",
+        "",
+        "",
+        "",
+        "Identifying Angles In Figures",
+        "",
+        1
+    ],
+    "Right-Angles": [
+        "/Angles/Right_Angles",
+        "",
+        "",
+        "",
+        "Right Angles",
+        "P3A",
+        1
+    ],
+    "Bar-Graphs": [
+        "/BarGraphs/Bar_Graphs",
+        "",
+        "",
+        "",
+        "Bar Graphs",
+        "P3B",
+        1
+    ],
+    "Identifying-Perpendicular-Parallel-Lines": [
+        "/PerpendicularParallel/Perpendicular_Parallel",
+        "",
+        "",
+        "",
+        "Identifying Perpendicular Parallel Lines",
+        "",
+        1
+    ]},
+    'Primary4':
+        #Primary-4
     
-  "Tables-and-Bar-Graphs": [
-    "/Learn/Primary4/Data-Analysis/Tables-and-Bar-Graphs.html",
+  {"Tables-and-Bar-Graphs": [
+    "/Primary4/DataAnalysis/Tables-and-Bar-Graphs.html",
     "/Learn/P4DataAnalysisTablesBar",
     "/Learn/P4DataAnalysisTablesBar",
     "",
@@ -103,7 +373,7 @@ Primary3 = {
     1
   ],
   "Line-Graphs": [
-    "/Learn/Primary4/Data-Analysis/Line-Graphs.html",
+    "/Primary4/DataAnalysis/Line-Graphs.html",
     "/Learn/P4DataAnalysisLineGraphs",
     "/Learn/P4DataAnalysisLineGraphs",
     "",
@@ -112,7 +382,7 @@ Primary3 = {
     2
   ],
   "Perpendicular-and-Parallel-Lines": [
-    "/Learn/Primary4/Geometry/Perpendicular-and-Parallel-Lines.html",
+    "/Primary4/Geometry/Perpendicular-and-Parallel-Lines.html",
     "/Learn/P4GeometryParallelPerpendicular",
     "/Learn/P4GeometryParallelPerpendicular",
     "",
@@ -130,7 +400,7 @@ Primary3 = {
     2
   ],
   "What-is-an-angle-how-to-measure-it": [
-    "/Learn/Primary4/Geometry/What-is-an-angle-how-to-measure-it.html",
+    "/Primary4/Geometry/Understanding-Angles.html",
     "/Learn/P4GeometryWhatisanAngle",
     "/Learn/P4GeometryWhatisanAngle",
     "",
@@ -175,7 +445,7 @@ Primary3 = {
     7
   ],
   "Area-and-Perimeter-of-Rectangles-and-Squares": [
-    "/Learn/Primary4/Measurement/Area-and-Perimeter-of-Rectangles-and-Squares.html",
+    "/Primary4/Measurement/Area-and-Perimeter-of-Rectangles-and-Squares.html",
     "/Learn/P4MeasurementRectangleSquare",
     "/Learn/P4MeasurementRectangleSquare",
     "",
@@ -184,7 +454,7 @@ Primary3 = {
     1
   ],
   "Time-Seconds-24-Hour-Clock-Duration": [
-    "/Learn/Primary4/Measurement/Time-Seconds-24-Hour-Clock-Duration.html",
+    "/Primary4/Measurement/Time-Seconds-24-Hour-Clock-Duration.html",
     "/Learn/P4MeasurementTime",
     "/Learn/P4MeasurementTime",
     "",
@@ -229,7 +499,7 @@ Primary3 = {
     4
   ],
   "Understanding-Tenths-Hundredths-Thousandths": [
-    "/Learn/Primary4/Decimals/Understanding-Tenths-Hundredths-Thousandths.html",
+    "Primary4/Decimals/Understanding-Tenths-Hundredths-Thousandths.html",
     "/Learn/P4Decimal10s100s1000s",
     "/Learn/P4Decimal10s100s1000s",
     "",
@@ -247,7 +517,7 @@ Primary3 = {
     2
   ],
   "Decimals-Subtraction": [
-    "/Learn/Primary4/Decimal/Decimals-Subtraction.html",
+    "/Learn/Primary4/Decimals/Decimals-Subtraction.html",
     "/Learn/P4DecimalSubtraction",
     "/Learn/P4DecimalSubtraction",
     "",
@@ -273,8 +543,8 @@ Primary3 = {
     "P4Decimal",
     5
   ],
-  "Word-Problems-Decimals": [
-    "/Learn/Primary4/Decimals/Word-Problems.html",
+  "Word-Problems": [
+    "/Learn/Primary4/Decimals/Decimals-Word-Problems.html",
     "/Learn/P4DecimalWordProblems",
     "/Learn/P4DecimalWordProblems",
     "",
@@ -302,7 +572,7 @@ Primary3 = {
     2
   ],
   "Types-of-Fractions": [
-    "/Learn/Primary-Grade-4/Types-of-Fractions.html",
+    "/Fractions/Types-of-Fractions.html",
     "/Learn/P5FRTypesFractions",
     "/Learn/P5FRTypesFractions",
     "",
@@ -320,7 +590,7 @@ Primary3 = {
     4
   ],
   "Mixed-Numbers-Improper-Fractions": [
-    "/Learn/Primary-Grade-4/Fractions/Mixed-Numbers-Improper-Fractions.html",
+    "/Primary5/Fractions/Improper-Mixed-Fractions.html",
     "/Learn/P5FRImproperMixedFractions",
     "/Learn/P5FRImproperMixedFractions",
     "",
@@ -345,12 +615,12 @@ Primary3 = {
     "Subtraction of Proper Fractions",
     "P4Fractions",
     7
-  ],
+  ]},'Primary5':
 
 
 #primary5
  
-  "Figures-to-Words": [
+  {"Figures-to-Words": [
     "/Learn/Primary5/WholeNumbers/Figures-to-Words.html",
     "/Learn/P5WNFiguresToWords",
     "/Learn/P5WNFiguresToWords",
@@ -369,7 +639,7 @@ Primary3 = {
     2
   ],
   "Place-Values": [
-    "/Learn/Primary5/WholeNumbers/Place-Values.html",
+    "/Learn/Primary5/WholeNumbers/Place-Value.html",
     "/Learn/P5WNPlaceValue",
     "/Learn/P5WNPlaceValue",
     "",
@@ -431,8 +701,19 @@ Primary3 = {
     "P5WholeNumbers",
     9
   ],
+  "Word-Problems-Solving-Model-Method": [
+    "/Learn/Primary5/WholeNumbers/Word-Problems.html",
+    "",
+    "",
+    "",
+    "",
+    "P5WholeNumbersWordProblems",
+    9
+  ],
+  "Unlike-Fractions-LCM-Part-1": ["/Primary5/Fractions/Unlike-Fractions-LCM-Part-1", "", "", "", "", "",1],
+  "Unlike-Fractions-LCM-Part-2": ["/Primary5/Fractions/Unlike-Fractions-LCM-Part-2", "", "", "", "", "",2],
   "What-Is-a-Fraction": [
-    "/Learn/Primary5/Fractions/What-Is-a-Fraction.html",
+    "Primary5/Fractions/What-Is-a-Fraction.html",
     "/Learn/P5FRWhatIsFractions",
     "/Learn/P5FRWhatIsFractions",
     "",
@@ -576,7 +857,7 @@ Primary3 = {
     3
   ],
   "Estimation-in-Decimal-Calculations": [
-    "/Learn/Primary5/Decimal/Estimation-in-Calculations-with-Decimal-Numbers.html",
+    "/Learn/Primary5/Decimal/estimation-in-calculations-with-decimal-numbers.html",
     "/Learn/P5DCEstimation",
     "/Learn/P5DCEstimation",
     "",
@@ -584,8 +865,8 @@ Primary3 = {
     "P5Decimal",
     4
   ],
-  "Percentage-Introduction": [
-    "/Learn/Primary5/Percentage/Introduction.html",
+  "Introduction": [
+    "/Learn/Primary5/Percentage/introduction-to-percentage.html",
     "/Learn/P5PRIntroduction",
     "/Learn/P5PRIntroduction",
     "",
@@ -594,7 +875,7 @@ Primary3 = {
     1
   ],
   "Percentage-and-Fractions": [
-    "/Learn/Primary5/Percentage/Percentage-and-Fractions.html",
+    "/Learn/Primary5/Percentage/percentage-and-fraction.html",
     "/Learn/P5PRFractions",
     "/Learn/P5PRFractions",
     "",
@@ -611,8 +892,18 @@ Primary3 = {
     "P5Percentage",
     3
   ],
+  "Finding-Average": [
+    "/Learn/Primary5/DataAnalysis/average.html",
+    "/Learn/P5DAAverage",
+    "/Learn/P5DAAverage",
+    "",
+    "Finding Average",
+    "P5DAAverage",
+    3
+  ],
+  
   "Ratio-Introduction": [
-    "/Learn/Primary5/Ratio/Introduction.html",
+    "/Learn/Primary5/Ratio/introduction-to-ratio.html",
     "/Learn/P5RTIntroduction",
     "/Learn/P5RTIntroduction",
     "",
@@ -620,8 +911,8 @@ Primary3 = {
     "P5Ratio",
     1
   ],
-  "Ratio-Equivalent": [
-    "/Learn/Primary5/Ratio/Equivalent.html",
+  "Equivalent": [
+    "/Learn/Primary5/Ratio/equivalent-ratios.html",
     "/Learn/P5RTEquivalent",
     "/Learn/P5RTEquivalent",
     "",
@@ -629,8 +920,51 @@ Primary3 = {
     "P5Ratio",
     2
 ],
+"Simplifying": [
+    "/Learn/Primary5/Ratio/simplifying-ratios.html",
+    "/Learn/P5RatioSimplestForm",
+    "/Learn/P5RatioSimplestForm",
+    "",
+    "Simplifying Ratios",
+    "P5RatioSimplestForm",
+    2
+],
+"What-is-an-angle": ["/Primary5/Geometry/What-is-an-angle.html", "", "", "", "", "P5GeometryWhatIsAngle",""],
+    "Finding-unknown-angles": ["/Primary5/Geometry/finding-unknown-angles.html", "", "", "", "", "P5GeometryAngles",""],
+    "Types-of-triangles": ["/Primary5/Geometry/types-of-triangles.html", "", "", "", "", "P5GeometryTriangles",""],
+    "Angle-sum-of-triangle": ["/Primary5/Geometry/angle-sum-of-triangles.html", "", "", "", "", "P5GeometryAngleSum",""],
+    "What-are-Properties-of-Triangles": ["/Primary5/Geometry/properties-of-triangles.html","","","","","",""],
+    "Triangle-Finding-unknown-angles": ["/Primary5/Geometry/triangle-Finding-unknown-angles.html", "", "", "", "", "P5GeometryTriangleAngle",""],
+    "Drawing-Triangles-Using-geometrical-instruments-part-1": ["/Primary5/Geometry/drawing-triangles-using-geometrical-instruments-part-1.html", "", "", "", "", "P5GeometryDrawingTriangles1",""],
+    "Drawing-Triangles-Using-geometrical-instruments-part-2": ["/Primary5/Geometry/drawing-triangles-using-geometrical-instruments-part-2.html", "", "", "", "", "P5GeometryDrawingTriangles2",""],
+    "Drawing-Triangles-Using-geometrical-instruments-part-3": ["/Primary5/Geometry/drawing-triangles-using-geometrical-instruments-part-3.html", "", "", "", "", "P5GeometryDrawingTriangles3",""],
+    "Four-sided-figures-types-and-properties": ["/Primary5/Geometry/Four-sided-figures-types-and-properties.html", "", "", "", "", "P5GeometryFourSided",""],
+    "Four-sided-figures-finding-unknown-angles-part-1": ["/Primary5/Geometry/Four-sided-figures-finding-unknown-angles-part-1.html", "", "", "", "", "P5GeometryFourSidedAngles1",""],
+    "Four-sided-figures-finding-unknown-angles-part-2": ["/Primary5/Geometry/Four-sided-figures-finding-unknown-angles-part-2.html", "", "", "", "", "P5GeometryFourSidedAngles2",""],
+    "Four-sided-figures-finding-unknown-angles-part-3": ["/Primary5/Geometry/Four-sided-figures-finding-unknown-angles-part-3.html", "", "", "", "", "P5GeometryFourSidedAngles3",""],
+    "Drawing-a-parallelogram": ["/Primary5/Geometry/drawing-four-sided-figures-parallelogram.html", "", "", "", "", "P5GeometryFourSidedFigures1",""],
+    "Drawing-a-rhombus": ["/Primary5/Geometry/drawing-four-sided-figures-rhombus.html", "", "", "", "", "P5GeometryFourSidedFigures2",""],
+    "Drawing-a-trapezium": ["/Primary5/Geometry/drawing-four-sided-figures-trapezium.html", "", "", "", "", "P5GeometryFourSidedFigures3",""],
+    #measurement
+    "Conversion-Of-Units": ["/Primary5/Measurement/Conversion-Of-Units.html", "", "", "", "", "P5MeasurementUnitConversion", ""],
+    "Triangle-Base-Height": ["/Primary5/Measurement/triangle-base-height-measurement.html", "", "", "", "", "", ""],
+    "Area-of-Triangle": ["/Primary5/Measurement/finding-area-of-triangle.html", "", "", "", "", "P5MeasurementAreaOfTriangle", ""],
+    "Introduction-to-volume-of-cube-cuboid-part-1": ["/Primary5/Measurement/volume-of-cube-cuboid-part-1.html", "", "", "", "", "", ""],
+    "Introduction-to-volume-of-cube-cuboid-part-2": ["/Primary5/Measurement/volume-of-cube-cuboid-part-2.html", "", "", "", "", "", ""],
+    "Introduction-to-volume-of-cube-cuboid-part-3": ["/Primary5/Measurement/volume-of-cube-cuboid-part-3.html", "", "", "", "", "P5MeasurementVolume", ""],
+    "Word-Problems": ["/Primary5/Measurement/Word-Problems.html", "", "", "", "", "P5MeasurementWordProblems", ""]
+  },'Primary6':{
 
 #primary 6
+"Dividing-Whole-Number-by-Proper-Fraction": [
+    "/Learn/Primary6/Fractions/Dividing-Whole-Number-by-Proper-Fraction",
+    "/Learn/P6ProperFractionProperFraction",
+    "/Learn/P6ProperFractionProperFraction",
+    "",
+    "Dividing Proper Fraction by Proper Fraction",
+    "P6Fractions",
+    1
+  ],
   "Dividing-Proper-Fraction-by-Proper-Fraction": [
     "/Learn/Primary6/Fractions/Dividing-Proper-Fraction-by-Proper-Fraction",
     "/Learn/P6ProperFractionProperFraction",
@@ -677,7 +1011,7 @@ Primary3 = {
     2
   ],
   "Advanced-Word-Problems": [
-    "/Learn/Primary6/Percentage/Advanced-Word-Problems",
+    "/Primary6/Percentage/Percentage-Advanced-Word-Problems",
     "/Learn/P6PercentageWordProblems",
     "/Learn/P6PercentageWordProblems",
     "",
@@ -703,7 +1037,7 @@ Primary3 = {
     "P6Speed",
     2
   ],
-  "Advanced-Word-Problems-Speed": [
+  "advanced-Word-Problems": [
     "/Learn/Primary6/Speed/Advanced-Word-Problems",
     "/Learn/P6SpeedAdvancedWordProblems",
     "/Learn/P6SpeedAdvancedWordProblems",
@@ -713,7 +1047,7 @@ Primary3 = {
     3
   ],
   "Pie-Chart": [
-    "/Learn/Primary6/Data-Analysis/Pie-Chart",
+    "/Learn/Primary6/DataAnalysis/Pie-Charts",
     "/Learn/P6DataAnalysisPieChart",
     "/Learn/P6DataAnalysisPieChart",
     "",
@@ -722,7 +1056,7 @@ Primary3 = {
     1
   ],
   "Pie-Chart-Word-Problems": [
-    "/Learn/Primary6/Data-Analysis/Pie-Chart-Word-Problems",
+    "/Learn/Primary6/DataAnalysis/Pie-Charts-Word-Problems",
     "/Learn/P6DataAnalysisPieChartWordProblems",
     "/Learn/P6DataAnalysisPieChartWordProblems",
     "",
@@ -730,8 +1064,8 @@ Primary3 = {
     "P6DataAnalysis",
     2
   ],
-  "Word-Problems-Ratio": [
-    "/Learn/Primary6/Ratio/Word-Problems",
+  "Word-Problems": [
+    "/Learn/Primary6/Ratio/Ratio-Word-Problems",
     "/Learn/P6RatioWordProblems",
     "/Learn/P6RatioWordProblems",
     "",
@@ -794,7 +1128,7 @@ Primary3 = {
     4
   ],
   "Area-and-Perimeter-of-Composite-Figures": [
-    "/Learn/Primary6/Area-and-Perimeter-of-Composite-Figures",
+    "/Measurement/Area-and-Perimeter-of-Composite-Figures.html",
     "/Learn/P6MeasurementComposite",
     "/Learn/P6MeasurementComposite",
     "",
@@ -819,10 +1153,7 @@ Primary3 = {
     "Tips To Remember (Multiplication) Times Table Of 2 To 12",
     "P2WholeNumbers",
     1
-  ]
-
-
-
+  ]}
 }
 
 # End of LearnMappings for PRIMARY - 3
@@ -843,7 +1174,7 @@ LinkMap_P3 = [
         ),
         ( "P3MO", "Money",
           [
-           ("Addition", "/Learn/Primary-Grade-3/Addition-of-Money"), ("Subtraction", "/Learn/Primary-Grade-3/Subtraction-of-Money"),
+           ("Addition", "/Learn/Primary-Grade-3/Addition-of-Money"), ("Subtraction", "/Learn/Primary-Grade-3/Subtraction_Of_Money"),
            ("Word Problems", "/Learn/Primary-Grade-3/Money-Word-Problems")
           ]
         ),
@@ -860,9 +1191,10 @@ LinkMap_P3 = [
 
 class Grade3Mapper:
     @classmethod
-    def getMapping(cls, subTopic, topic=""):
+    def getMapping(cls, subTopic, topic="",grade=""):
         try:
-            data = Primary3[subTopic]
+            data = map[grade][subTopic]
+            print(data[0])
         except KeyError:
             raise
 
