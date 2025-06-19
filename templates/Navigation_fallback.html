@@ -3,7 +3,7 @@
 {% endmacro %}
 
 {% macro render_tools(cssClass, btnClass="btn-navbar", listClass="", showBell= True) %}
-	{% if current_user -%}
+	{% if current_user.is_authenticated -%}
 		<ul class="{{ cssClass }} l-in">
 			{% if current_user.IsParent %}
 				<li class="{{listClass}}"><a class="{{btnClass}}" href="/MyProfile">{{ current_user.first_name|e }}</a> 
