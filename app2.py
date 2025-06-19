@@ -38,7 +38,11 @@ def login():
         flash('Invalid credentials')
     return render_template('LoginPage.html')
 
-
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
 
 @app.route('/Primary_Grade_3_Mathematics')
 #@login_required
