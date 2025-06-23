@@ -40,8 +40,16 @@ def load_user(user_id):
 def index():
     return render_template('HomePage.html')
 @app.context_processor
+
 def inject_user():
-    return dict(current_user=current_user)
+    """Make common helpers available in all templates."""
+    return dict(
+        current_user=current_user,
+        login_url=url_for('login'),
+        logout_url=url_for('logout'),
+        current_url=request.url,
+    )
+
 
 @app.route('/LoginPage', methods=['GET', 'POST'])
 def login():
@@ -51,7 +59,34 @@ def login():
         user = get_user_by_username(username)
         if user and user.password == password:
             login_user(user)
+
+            if 'async' in request.args:
+                continue_url = request.args.get('continue') or url_for('index')
+                return {'success': True, 'continue_url': continue_url}
             return redirect(url_for('index'))
+        if 'async' in request.args:
+            return {'success': False, 'error': 'Invalid credentials'}
+        flash('Invalid credentials')
+    return render_template('LoginPage.html')
+
+
+@app.route('/SignIn', methods=['GET', 'POST'])
+def signin():
+    """AJAX-friendly sign-in endpoint."""
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        user = get_user_by_username(username)
+        if user and user.password == password:
+            login_user(user)
+            if 'async' in request.args:
+                continue_url = request.args.get('continue') or url_for('index')
+                return {'success': True, 'continue_url': continue_url}
+            return redirect(url_for('index'))
+        # invalid credentials
+        if 'async' in request.args:
+            return {'success': False, 'error': 'Invalid credentials'}
+
         flash('Invalid credentials')
     return render_template('LoginPage.html')
 
@@ -62,14 +97,25 @@ def register():
         username = request.form.get('email')
         password = request.form.get('parent_password')
         if not username or not password:
+
+            if 'async' in request.args:
+                return {'success': False, 'error': 'Email and password are required.'}
+
             flash('Email and password are required.')
             return render_template('RegisterPage.html')
 
         if get_user_by_username(username):
+            if 'async' in request.args:
+                return {'success': False, 'error': 'User already exists.'}
             flash('User already exists.')
             return render_template('RegisterPage.html')
 
-        create_user(username, password)
+        user = create_user(username, password)
+        if 'async' in request.args:
+            login_user(user)
+            continue_url = request.args.get('continue') or url_for('index')
+            return {'success': True, 'continue_url': continue_url}
+
         flash('Registration successful. Please log in.')
         return redirect(url_for('login'))
 
