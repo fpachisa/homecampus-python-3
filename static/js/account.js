@@ -358,9 +358,11 @@ function LoginAsChild(username)
 		error: function(){
 			notify("Some error ocurred! Please try again.");
 		},
-		success: function(data) {
-			data = JSON.parse(data);
-			if(data.success == true){
+                success: function(data) {
+                        if (typeof data === "string") {
+                                data = JSON.parse(data);
+                        }
+                        if(data.success == true){
 				var URL = "/";
 				switch( data.skill ){
 				case "P3": URL = "/Primary_Grade_3_Mathematics";break;
@@ -402,9 +404,11 @@ function doLogin(data, url, button){
 		error: function(){
 			notify("Some error ocurred! Please try again later");
 		},
-		success: function(data, status, jqXHR){
-			data = JSON.parse(data);
-			if(data.success === true){
+                success: function(data, status, jqXHR){
+                        if (typeof data === "string") {
+                                data = JSON.parse(data);
+                        }
+                        if(data.success === true){
 				//logged in here
 				//if continue url is provided go there
 				if(data.continue_url != undefined)

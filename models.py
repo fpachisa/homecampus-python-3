@@ -1,33 +1,40 @@
 from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
 from flask_login import UserMixin
 
-# Dummy in-memory user store (replace with DB later)
-users = {
-    'admin': {'id': 1, 'username': 'admin', 'password': 'admin123'},
-}
+db = SQLAlchemy()
 
-class User(UserMixin):
-    def __init__(self, id, username, password):
-        self.id = id
-        self.username = username
-        self.password = password
+
+class User(db.Model, UserMixin):
+    """Simple user model for authentication."""
+
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(150), unique=True, nullable=False)
+    password = db.Column(db.String(150), nullable=False)
 
     def get_id(self):
         return str(self.id)
 
+
 def get_user_by_username(username):
-    user_data = users.get(username)
-    if user_data:
-        return User(**user_data)
-    return None
+    """Return a user by username."""
+    if not username:
+        return None
+    return User.query.filter_by(username=username).first()
+
 
 def get_user_by_id(user_id):
-    for user_data in users.values():
-        if str(user_data['id']) == str(user_id):
-            return User(**user_data)
-    return None
+    """Return a user by id."""
+    if not user_id:
+        return None
+    return User.query.get(int(user_id))
+
+
+def create_user(username, password):
+    """Create and return a new user."""
+    user = User(username=username, password=password)
+    db.session.add(user)
+    db.session.commit()
+    return user
 
 class HCSubscription(db.Model):
     id = db.Column(db.Integer, primary_key=True)
