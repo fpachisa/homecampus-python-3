@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_login import (
     LoginManager,
@@ -26,6 +27,7 @@ app = Flask(__name__)
 app.config.from_object(Config)
 db.init_app(app)
 
+
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
@@ -50,7 +52,6 @@ def inject_user():
         current_url=request.url,
     )
 
-
 @app.route('/LoginPage', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -59,7 +60,6 @@ def login():
         user = get_user_by_username(username)
         if user and user.password == password:
             login_user(user)
-
             if 'async' in request.args:
                 continue_url = request.args.get('continue') or url_for('index')
                 return {'success': True, 'continue_url': continue_url}
@@ -86,9 +86,45 @@ def signin():
         # invalid credentials
         if 'async' in request.args:
             return {'success': False, 'error': 'Invalid credentials'}
-
         flash('Invalid credentials')
     return render_template('LoginPage.html')
+
+
+@app.route('/Register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form.get('email')
+        password = request.form.get('parent_password')
+        if not username or not password:
+            if 'async' in request.args:
+                return {'success': False, 'error': 'Email and password are required.'}
+            flash('Email and password are required.')
+            return render_template('RegisterPage.html')
+
+        if get_user_by_username(username):
+            if 'async' in request.args:
+                return {'success': False, 'error': 'User already exists.'}
+            flash('User already exists.')
+            return render_template('RegisterPage.html')
+
+        user = create_user(username, password)
+        if 'async' in request.args:
+            login_user(user)
+            continue_url = request.args.get('continue') or url_for('index')
+            return {'success': True, 'continue_url': continue_url}
+
+        flash('Registration successful. Please log in.')
+        return redirect(url_for('login'))
+
+    return render_template('RegisterPage.html')
+
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
 
 
 @app.route('/Register', methods=['GET', 'POST'])
@@ -587,7 +623,9 @@ def Grade_3_Math_Practice():
 def learn_page():
     return render_template('LearnPage.html', section='content')
 
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(debug=True)
+
