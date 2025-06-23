@@ -40,6 +40,7 @@ def load_user(user_id):
 def index():
     return render_template('HomePage.html')
 @app.context_processor
+
 def inject_user():
     """Make common helpers available in all templates."""
     return dict(
@@ -49,6 +50,7 @@ def inject_user():
         current_url=request.url,
     )
 
+
 @app.route('/LoginPage', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -57,6 +59,7 @@ def login():
         user = get_user_by_username(username)
         if user and user.password == password:
             login_user(user)
+
             if 'async' in request.args:
                 continue_url = request.args.get('continue') or url_for('index')
                 return {'success': True, 'continue_url': continue_url}
@@ -83,6 +86,7 @@ def signin():
         # invalid credentials
         if 'async' in request.args:
             return {'success': False, 'error': 'Invalid credentials'}
+
         flash('Invalid credentials')
     return render_template('LoginPage.html')
 
@@ -93,8 +97,10 @@ def register():
         username = request.form.get('email')
         password = request.form.get('parent_password')
         if not username or not password:
+
             if 'async' in request.args:
                 return {'success': False, 'error': 'Email and password are required.'}
+
             flash('Email and password are required.')
             return render_template('RegisterPage.html')
 

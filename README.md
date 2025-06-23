@@ -15,6 +15,8 @@ This project contains a small Flask application used for serving math content. I
    ```
 
 The app will create the database tables on first run. You can then register new users at `/Register` and sign in at `/LoginPage`.
+
 Both `/SignIn` and `/Register` also accept AJAX POST requests when the query
 parameter `async` is present. These endpoints return JSON indicating success and
 the redirect URL used by the embedded JavaScript forms.
+
