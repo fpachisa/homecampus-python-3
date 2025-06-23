@@ -1,6 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-from models import get_user_by_username, get_user_by_id
+from flask_login import (
+    LoginManager,
+    login_user,
+    logout_user,
+    login_required,
+    current_user,
+)
+from config import Config
+from models import (
+    db,
+    User,
+    get_user_by_username,
+    get_user_by_id,
+    create_user,
+)
 from flask import abort
 import Grade7PageConfig 
 from LearnMappings import Grade3Mapper as mapper
@@ -8,8 +21,10 @@ import traceback
 from flask import send_file
 from flask import send_from_directory, abort
 import os
+
 app = Flask(__name__)
-app.secret_key = 'your-secret-key'
+app.config.from_object(Config)
+db.init_app(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -26,7 +41,13 @@ def index():
     return render_template('HomePage.html')
 @app.context_processor
 def inject_user():
-    return dict(current_user=current_user)
+    """Make common helpers available in all templates."""
+    return dict(
+        current_user=current_user,
+        login_url=url_for('login'),
+        logout_url=url_for('logout'),
+        current_url=request.url,
+    )
 
 @app.route('/LoginPage', methods=['GET', 'POST'])
 def login():
@@ -36,9 +57,70 @@ def login():
         user = get_user_by_username(username)
         if user and user.password == password:
             login_user(user)
+            if 'async' in request.args:
+                continue_url = request.args.get('continue') or url_for('index')
+                return {'success': True, 'continue_url': continue_url}
             return redirect(url_for('index'))
+        if 'async' in request.args:
+            return {'success': False, 'error': 'Invalid credentials'}
         flash('Invalid credentials')
     return render_template('LoginPage.html')
+
+
+@app.route('/SignIn', methods=['GET', 'POST'])
+def signin():
+    """AJAX-friendly sign-in endpoint."""
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        user = get_user_by_username(username)
+        if user and user.password == password:
+            login_user(user)
+            if 'async' in request.args:
+                continue_url = request.args.get('continue') or url_for('index')
+                return {'success': True, 'continue_url': continue_url}
+            return redirect(url_for('index'))
+        # invalid credentials
+        if 'async' in request.args:
+            return {'success': False, 'error': 'Invalid credentials'}
+        flash('Invalid credentials')
+    return render_template('LoginPage.html')
+
+
+@app.route('/Register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form.get('email')
+        password = request.form.get('parent_password')
+        if not username or not password:
+            if 'async' in request.args:
+                return {'success': False, 'error': 'Email and password are required.'}
+            flash('Email and password are required.')
+            return render_template('RegisterPage.html')
+
+        if get_user_by_username(username):
+            if 'async' in request.args:
+                return {'success': False, 'error': 'User already exists.'}
+            flash('User already exists.')
+            return render_template('RegisterPage.html')
+
+        user = create_user(username, password)
+        if 'async' in request.args:
+            login_user(user)
+            continue_url = request.args.get('continue') or url_for('index')
+            return {'success': True, 'continue_url': continue_url}
+
+        flash('Registration successful. Please log in.')
+        return redirect(url_for('login'))
+
+    return render_template('RegisterPage.html')
+
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
 
 
 
@@ -500,4 +582,6 @@ def learn_page():
     return render_template('LearnPage.html', section='content')
 
 if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)
